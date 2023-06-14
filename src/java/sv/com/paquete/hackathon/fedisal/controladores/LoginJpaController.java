@@ -7,6 +7,7 @@ package sv.com.paquete.hackathon.fedisal.controladores;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
@@ -22,7 +23,11 @@ import sv.com.paquete.hackathon.fedisal.entidades.Login;
  *
  * @author HP
  */
+@Stateless
 public class LoginJpaController implements Serializable {
+
+    public LoginJpaController() {
+    }
 
     public LoginJpaController(UserTransaction utx, EntityManagerFactory emf) {
         this.utx = utx;
